@@ -1,0 +1,193 @@
+--23090-- 
+--23090-- Valgrind options:
+--23090--    --tool=memcheck
+--23090--    --xml=yes
+--23090--    --xml-file=/tmp/valgrind
+--23090--    --gen-suppressions=all
+--23090--    --leak-check=full
+--23090--    --error-exitcode=1
+--23090--    --show-leak-kinds=all
+--23090--    --track-origins=yes
+--23090--    --verbose
+--23090--    --show-reachable=no
+--23090--    --log-file=valgrind-out.txt
+--23090-- Contents of /proc/version:
+--23090--   Linux version 5.3.0-28-generic (buildd@lcy01-amd64-009) (gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1)) #30~18.04.1-Ubuntu SMP Fri Jan 17 06:14:09 UTC 2020
+--23090-- 
+--23090-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--23090-- Page sizes: currently 4096, max supported 4096
+--23090-- Valgrind library directory: /usr/lib/valgrind
+--23090-- Reading syms from /home/keyhan/projects/c++/EogenVirtualMachine/EogenVirtualMachine
+--23090-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--23090--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--23090--   .. CRC mismatch (computed 1b7c895e wanted 2943108a)
+--23090--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--23090--   .. CRC is valid
+--23090-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--23090--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--23090--   .. CRC mismatch (computed 41ddb025 wanted 9972f546)
+--23090-- Scheduler: using generic scheduler lock implementation.
+--23090-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==23090== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-23090-by-keyhan-on-???
+==23090== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-23090-by-keyhan-on-???
+==23090== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-23090-by-keyhan-on-???
+==23090== 
+==23090== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==23090== don't want to do, unless you know exactly what you're doing,
+==23090== or are doing some strange experiment):
+==23090==   /usr/lib/valgrind/../../bin/vgdb --pid=23090 ...command...
+==23090== 
+==23090== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==23090==   /path/to/gdb ./EogenVirtualMachine
+==23090== and then give GDB the following command
+==23090==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=23090
+==23090== --pid is optional if only one valgrind process is running
+==23090== 
+--23090-- REDIR: 0x401f2f0 (ld-linux-x86-64.so.2:strlen) redirected to 0x580608c1 (???)
+--23090-- REDIR: 0x401f0d0 (ld-linux-x86-64.so.2:index) redirected to 0x580608db (???)
+--23090-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--23090--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--23090--   .. CRC mismatch (computed 50df1b30 wanted 4800a4cf)
+--23090-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--23090--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--23090--   .. CRC mismatch (computed f893b962 wanted 95ee359e)
+==23090== WARNING: new redirection conflicts with existing -- ignoring it
+--23090--     old: 0x0401f2f0 (strlen              ) R-> (0000.0) 0x580608c1 ???
+--23090--     new: 0x0401f2f0 (strlen              ) R-> (2007.0) 0x04c32db0 strlen
+--23090-- REDIR: 0x401d360 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c33ee0 (strcmp)
+--23090-- REDIR: 0x401f830 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c374f0 (mempcpy)
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libm-2.27.so
+--23090--   Considering /lib/x86_64-linux-gnu/libm-2.27.so ..
+--23090--   .. CRC mismatch (computed 7feae033 wanted b29b2508)
+--23090--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.27.so ..
+--23090--   .. CRC is valid
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libpq.so.5.12
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libpthread-2.27.so
+--23090--   Considering /usr/lib/debug/.build-id/28/c6aade70b2d40d1f0f3d0a1a0cad1ab816448f.debug ..
+--23090--   .. build-id is valid
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libcurl.so.4.5.0
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--23090--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--23090--   .. CRC mismatch (computed b1c74187 wanted 042cc048)
+--23090--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--23090--   .. CRC is valid
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libldap_r-2.4.so.2.10.8
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libnghttp2.so.14.15.2
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libidn2.so.0.3.3
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/librtmp.so.1
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libpsl.so.5.2.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/liblber-2.4.so.2.10.8
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libz.so.1.2.11
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libdl-2.27.so
+--23090--   Considering /lib/x86_64-linux-gnu/libdl-2.27.so ..
+--23090--   .. CRC mismatch (computed bd82fa02 wanted d1fdccc9)
+--23090--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libdl-2.27.so ..
+--23090--   .. CRC is valid
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libcom_err.so.2.1
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libresolv-2.27.so
+--23090--   Considering /lib/x86_64-linux-gnu/libresolv-2.27.so ..
+--23090--   .. CRC mismatch (computed 4f654d8d wanted bb34a537)
+--23090--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libresolv-2.27.so ..
+--23090--   .. CRC is valid
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libsasl2.so.2.0.25
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libgssapi.so.3.0.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libgnutls.so.30.14.10
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libunistring.so.2.1.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libhogweed.so.4.4
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libnettle.so.6.4
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libgmp.so.10.3.2
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libkeyutils.so.1.5
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libheimntlm.so.0.1.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libkrb5.so.26.0.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libasn1.so.8.0.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libhcrypto.so.4.1.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libroken.so.18.1.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libp11-kit.so.0.3.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libtasn1.so.6.5.5
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libwind.so.0.0.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libheimbase.so.1.0.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libhx509.so.5.0.0
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libsqlite3.so.0.8.6
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libcrypt-2.27.so
+--23090--   Considering /lib/x86_64-linux-gnu/libcrypt-2.27.so ..
+--23090--   .. CRC mismatch (computed 8955bf71 wanted 17b36cbd)
+--23090--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libcrypt-2.27.so ..
+--23090--   .. CRC is valid
+--23090-- Reading syms from /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+--23090-- REDIR: 0x5b77c70 (libc.so.6:memmove) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76d40 (libc.so.6:strncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77f50 (libc.so.6:strcasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76790 (libc.so.6:strcat) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76d70 (libc.so.6:rindex) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b797c0 (libc.so.6:rawmemchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77de0 (libc.so.6:mempcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77c10 (libc.so.6:bcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76d00 (libc.so.6:strncmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76800 (libc.so.6:strcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77d40 (libc.so.6:memset) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b950f0 (libc.so.6:wcschr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76ca0 (libc.so.6:strnlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76870 (libc.so.6:strcspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77fa0 (libc.so.6:strncasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76840 (libc.so.6:strcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b780e0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76da0 (libc.so.6:strpbrk) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b767c0 (libc.so.6:index) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76c70 (libc.so.6:strlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b816c0 (libc.so.6:memrchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77ff0 (libc.so.6:strcasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77be0 (libc.so.6:memchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b95eb0 (libc.so.6:wcslen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77050 (libc.so.6:strspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77f20 (libc.so.6:stpncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77ef0 (libc.so.6:stpcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b797f0 (libc.so.6:strchrnul) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b78040 (libc.so.6:strncasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5c0a8a0 (libc.so.6:__memcpy_chk) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b77b20 (libc.so.6:strstr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5b76cd0 (libc.so.6:strncat) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--23090-- REDIR: 0x5c0a970 (libc.so.6:__memmove_chk) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+==23090== WARNING: new redirection conflicts with existing -- ignoring it
+--23090--     old: 0x05c67ac0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04c375e0 __memcpy_chk
+--23090--     new: 0x05c67ac0 (__memcpy_chk_avx_una) R-> (2024.0) 0x04c36fa0 __memmove_chk
+==23090== WARNING: new redirection conflicts with existing -- ignoring it
+--23090--     old: 0x05c67ac0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04c375e0 __memcpy_chk
+--23090--     new: 0x05c67ac0 (__memcpy_chk_avx_una) R-> (2024.0) 0x04c36fa0 __memmove_chk
+==23090== WARNING: new redirection conflicts with existing -- ignoring it
+--23090--     old: 0x05c67ac0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04c375e0 __memcpy_chk
+--23090--     new: 0x05c67ac0 (__memcpy_chk_avx_una) R-> (2024.0) 0x04c36fa0 __memmove_chk
+--23090-- REDIR: 0x5c673c0 (libc.so.6:__strrchr_avx2) redirected to 0x4c32730 (rindex)
+--23090-- REDIR: 0x5c67590 (libc.so.6:__strlen_avx2) redirected to 0x4c32cf0 (strlen)
+--23090-- REDIR: 0x5c5e510 (libc.so.6:__strncmp_sse42) redirected to 0x4c33570 (__strncmp_sse42)
+--23090-- REDIR: 0x5b70070 (libc.so.6:malloc) redirected to 0x4c2faa0 (malloc)
+--23090-- REDIR: 0x5c67ad0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4c366e0 (memmove)
+--23090-- REDIR: 0x5c42d60 (libc.so.6:__strcmp_ssse3) redirected to 0x4c33da0 (strcmp)
+--23090-- REDIR: 0x5b73030 (libc.so.6:calloc) redirected to 0x4c31a70 (calloc)
+--23090-- REDIR: 0x5c66fa0 (libc.so.6:__strchr_avx2) redirected to 0x4c32950 (index)
+--23090-- REDIR: 0x5c67ac0 (libc.so.6:__memcpy_chk_avx_unaligned_erms) redirected to 0x4c375e0 (__memcpy_chk)
+--23090-- REDIR: 0x5b70950 (libc.so.6:free) redirected to 0x4c30cd0 (free)
+--23090-- REDIR: 0x5c671d0 (libc.so.6:__strchrnul_avx2) redirected to 0x4c37020 (strchrnul)
+--23090-- REDIR: 0x5b77590 (libc.so.6:__GI_strstr) redirected to 0x4c37760 (__strstr_sse2)
+--23090-- REDIR: 0x5c54950 (libc.so.6:__strcpy_ssse3) redirected to 0x4c32dd0 (strcpy)
+--23090-- REDIR: 0x5c67f50 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x4c365d0 (memset)
+--23090-- REDIR: 0x5b71c30 (libc.so.6:realloc) redirected to 0x4c31cb0 (realloc)
+--23090-- REDIR: 0x5c58c80 (libc.so.6:__stpcpy_ssse3) redirected to 0x4c35f60 (stpcpy)
+--23090-- REDIR: 0x5c67ab0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c37130 (mempcpy)
+--23090-- REDIR: 0x5c63420 (libc.so.6:__memchr_avx2) redirected to 0x4c33f80 (memchr)
+--23090-- REDIR: 0x5c631b0 (libc.so.6:__strpbrk_sse42) redirected to 0x4c37860 (strpbrk)
+--23090-- REDIR: 0x5c636f0 (libc.so.6:__rawmemchr_avx2) redirected to 0x4c37050 (rawmemchr)
+--23090-- REDIR: 0x5c655f0 (libc.so.6:__strncasecmp_avx) redirected to 0x4c336d0 (strncasecmp)
+--23090-- Reading syms from /lib/x86_64-linux-gnu/libnss_files-2.27.so
+--23090--   Considering /lib/x86_64-linux-gnu/libnss_files-2.27.so ..
+--23090--   .. CRC mismatch (computed 5cdb0f74 wanted 1b4e69e7)
+--23090--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libnss_files-2.27.so ..
+--23090--   .. CRC is valid
+--23090-- REDIR: 0x5c63f80 (libc.so.6:__strcasecmp_avx) redirected to 0x4c335f0 (strcasecmp)
+--23090-- Discarding syms at 0xc34f350-0xc355d7f in /lib/x86_64-linux-gnu/libnss_files-2.27.so due to munmap()

@@ -1,0 +1,293 @@
+The system is: Linux - 5.3.0-40-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out.js"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out.wasm"
+
+The C compiler identification is Clang, found in "/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/3.15.3/CompilerIdC/a.out.wasm"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/keyhan/Desktop6/emsdk/upstream/emscripten/em++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out.js"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out.wasm"
+
+The CXX compiler identification is Clang, found in "/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/3.15.3/CompilerIdCXX/a.out.wasm"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9f41d/fast && /usr/bin/make -f CMakeFiles/cmTC_9f41d.dir/build.make CMakeFiles/cmTC_9f41d.dir/build
+make[1]: Entering directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9f41d.dir/testCCompiler.c.o
+/home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc    -o CMakeFiles/cmTC_9f41d.dir/testCCompiler.c.o   -c /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_9f41d
+/home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f41d.dir/link.txt --verbose=1
+/home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc      CMakeFiles/cmTC_9f41d.dir/testCCompiler.c.o  -o cmTC_9f41d 
+shared:WARNING: Assuming object file output in the absence of `-c`, based on output filename. Please add with `-c` or `-r` to avoid this warning
+make[1]: Leaving directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8adea/fast && /usr/bin/make -f CMakeFiles/cmTC_8adea.dir/build.make CMakeFiles/cmTC_8adea.dir/build
+make[1]: Entering directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o
+/home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc   -v -o CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o   -c /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c
+shared:INFO: (Emscripten: Running sanity checks)
+ "/home/keyhan/Desktop6/emsdk/upstream/bin/clang" -target wasm32-unknown-emscripten -D__EMSCRIPTEN_major__=1 -D__EMSCRIPTEN_minor__=39 -D__EMSCRIPTEN_tiny__=11 -D_LIBCPP_ABI_VERSION=2 -Dunix -D__unix -D__unix__ -Werror=implicit-function-declaration -Xclang -nostdsysteminc -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include -Xclang -isystem/home/keyhan/.emscripten_cache/wasm/include -v -c -DEMSCRIPTEN -fignore-exceptions /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL -c -o CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr
+clang version 11.0.0 (/b/s/w/ir/cache/git/chromium.googlesource.com-external-github.com-llvm-llvm--project baa6f6a7828a46c37b96227282938717220f8b34)
+Target: wasm32-unknown-emscripten
+Thread model: posix
+InstalledDir: /home/keyhan/Desktop6/emsdk/upstream/bin
+ (in-process)
+ "/home/keyhan/Desktop6/emsdk/upstream/bin/clang-11" -cc1 -triple wasm32-unknown-emscripten -emit-obj -mrelax-all -disable-free -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mthread-model posix -mframe-pointer=none -fno-rounding-math -masm-verbose -mconstructor-aliases -target-cpu generic -fvisibility hidden -dwarf-column-info -debugger-tuning=gdb -v -resource-dir /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0 -D __EMSCRIPTEN_major__=1 -D __EMSCRIPTEN_minor__=39 -D __EMSCRIPTEN_tiny__=11 -D _LIBCPP_ABI_VERSION=2 -D unix -D __unix -D __unix__ -D EMSCRIPTEN -internal-isystem /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include -internal-isystem /include/wasm32-emscripten -internal-isystem /include -Werror=implicit-function-declaration -fdebug-compilation-dir /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fgnuc-version=4.2.1 -fobjc-runtime=gnustep -fignore-exceptions -fdiagnostics-show-option -nostdsysteminc -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include -isystem/home/keyhan/.emscripten_cache/wasm/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -o CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o -x c /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c
+clang -cc1 version 11.0.0 based upon LLVM 11.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/home/keyhan/.emscripten_cache/wasm/include"
+ignoring nonexistent directory "/include/wasm32-emscripten"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL
+ /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include
+End of search list.
+Linking C executable cmTC_8adea
+/home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8adea.dir/link.txt --verbose=1
+/home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc     -v CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o  -o cmTC_8adea 
+shared:INFO: (Emscripten: Running sanity checks)
+shared:WARNING: Assuming object file output in the absence of `-c`, based on output filename. Please add with `-c` or `-r` to avoid this warning
+make[1]: Leaving directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include]
+  end of search list found
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include]
+  implicit include dirs: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL;/home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_8adea/fast && /usr/bin/make -f CMakeFiles/cmTC_8adea.dir/build.make CMakeFiles/cmTC_8adea.dir/build]
+  ignore line: [make[1]: Entering directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc   -v -o CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o   -c /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c]
+  ignore line: [shared:INFO: (Emscripten: Running sanity checks)]
+  ignore line: [ "/home/keyhan/Desktop6/emsdk/upstream/bin/clang" -target wasm32-unknown-emscripten -D__EMSCRIPTEN_major__=1 -D__EMSCRIPTEN_minor__=39 -D__EMSCRIPTEN_tiny__=11 -D_LIBCPP_ABI_VERSION=2 -Dunix -D__unix -D__unix__ -Werror=implicit-function-declaration -Xclang -nostdsysteminc -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include -Xclang -isystem/home/keyhan/.emscripten_cache/wasm/include -v -c -DEMSCRIPTEN -fignore-exceptions /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL -c -o CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr]
+  ignore line: [clang version 11.0.0 (/b/s/w/ir/cache/git/chromium.googlesource.com-external-github.com-llvm-llvm--project baa6f6a7828a46c37b96227282938717220f8b34)]
+  ignore line: [Target: wasm32-unknown-emscripten]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /home/keyhan/Desktop6/emsdk/upstream/bin]
+  ignore line: [ (in-process)]
+  ignore line: [ "/home/keyhan/Desktop6/emsdk/upstream/bin/clang-11" -cc1 -triple wasm32-unknown-emscripten -emit-obj -mrelax-all -disable-free -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mthread-model posix -mframe-pointer=none -fno-rounding-math -masm-verbose -mconstructor-aliases -target-cpu generic -fvisibility hidden -dwarf-column-info -debugger-tuning=gdb -v -resource-dir /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0 -D __EMSCRIPTEN_major__=1 -D __EMSCRIPTEN_minor__=39 -D __EMSCRIPTEN_tiny__=11 -D _LIBCPP_ABI_VERSION=2 -D unix -D __unix -D __unix__ -D EMSCRIPTEN -internal-isystem /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include -internal-isystem /include/wasm32-emscripten -internal-isystem /include -Werror=implicit-function-declaration -fdebug-compilation-dir /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fgnuc-version=4.2.1 -fobjc-runtime=gnustep -fignore-exceptions -fdiagnostics-show-option -nostdsysteminc -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include -isystem/home/keyhan/.emscripten_cache/wasm/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -o CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o -x c /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 11.0.0 based upon LLVM 11.0.0git default target x86_64-unknown-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/home/keyhan/.emscripten_cache/wasm/include"]
+  ignore line: [ignoring nonexistent directory "/include/wasm32-emscripten"]
+  ignore line: [ignoring nonexistent directory "/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_8adea]
+  ignore line: [/home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8adea.dir/link.txt --verbose=1]
+  ignore line: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc     -v CMakeFiles/cmTC_8adea.dir/CMakeCCompilerABI.c.o  -o cmTC_8adea ]
+  ignore line: [shared:INFO: (Emscripten: Running sanity checks)]
+  ignore line: [shared:WARNING: Assuming object file output in the absence of `-c`, based on output filename. Please add with `-c` or `-r` to avoid this warning]
+  ignore line: [make[1]: Leaving directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp']
+  ignore line: []
+  ignore line: []
+  implicit libs: []
+  implicit dirs: []
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_675da/fast && /usr/bin/make -f CMakeFiles/cmTC_675da.dir/build.make CMakeFiles/cmTC_675da.dir/build
+make[1]: Entering directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_675da.dir/testCXXCompiler.cxx.o
+/home/keyhan/Desktop6/emsdk/upstream/emscripten/em++     -o CMakeFiles/cmTC_675da.dir/testCXXCompiler.cxx.o -c /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_675da
+/home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_675da.dir/link.txt --verbose=1
+/home/keyhan/Desktop6/emsdk/upstream/emscripten/em++       CMakeFiles/cmTC_675da.dir/testCXXCompiler.cxx.o  -o cmTC_675da 
+shared:WARNING: Assuming object file output in the absence of `-c`, based on output filename. Please add with `-c` or `-r` to avoid this warning
+make[1]: Leaving directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp'
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b7afc/fast && /usr/bin/make -f CMakeFiles/cmTC_b7afc.dir/build.make CMakeFiles/cmTC_b7afc.dir/build
+make[1]: Entering directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o
+/home/keyhan/Desktop6/emsdk/upstream/emscripten/em++    -v -o CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o -c /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp
+shared:INFO: (Emscripten: Running sanity checks)
+ "/home/keyhan/Desktop6/emsdk/upstream/bin/clang++" -target wasm32-unknown-emscripten -D__EMSCRIPTEN_major__=1 -D__EMSCRIPTEN_minor__=39 -D__EMSCRIPTEN_tiny__=11 -D_LIBCPP_ABI_VERSION=2 -Dunix -D__unix -D__unix__ -Werror=implicit-function-declaration -Xclang -nostdsysteminc -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include -Xclang -isystem/home/keyhan/.emscripten_cache/wasm/include -v -c -DEMSCRIPTEN -fignore-exceptions /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL -c -o CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr
+clang version 11.0.0 (/b/s/w/ir/cache/git/chromium.googlesource.com-external-github.com-llvm-llvm--project baa6f6a7828a46c37b96227282938717220f8b34)
+Target: wasm32-unknown-emscripten
+Thread model: posix
+InstalledDir: /home/keyhan/Desktop6/emsdk/upstream/bin
+ (in-process)
+ "/home/keyhan/Desktop6/emsdk/upstream/bin/clang-11" -cc1 -triple wasm32-unknown-emscripten -emit-obj -mrelax-all -disable-free -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mthread-model posix -mframe-pointer=none -fno-rounding-math -masm-verbose -mconstructor-aliases -target-cpu generic -fvisibility hidden -dwarf-column-info -debugger-tuning=gdb -v -resource-dir /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0 -D __EMSCRIPTEN_major__=1 -D __EMSCRIPTEN_minor__=39 -D __EMSCRIPTEN_tiny__=11 -D _LIBCPP_ABI_VERSION=2 -D unix -D __unix -D __unix__ -D EMSCRIPTEN -internal-isystem /include/wasm32-emscripten/c++/v1 -internal-isystem /include/c++/v1 -internal-isystem /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include -internal-isystem /include/wasm32-emscripten -internal-isystem /include -Werror=implicit-function-declaration -fdeprecated-macro -fdebug-compilation-dir /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fgnuc-version=4.2.1 -fobjc-runtime=gnustep -fcxx-exceptions -fignore-exceptions -fexceptions -fdiagnostics-show-option -nostdsysteminc -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include -isystem/home/keyhan/.emscripten_cache/wasm/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -o CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o -x c++ /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 11.0.0 based upon LLVM 11.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/home/keyhan/.emscripten_cache/wasm/include"
+ignoring nonexistent directory "/include/wasm32-emscripten/c++/v1"
+ignoring nonexistent directory "/include/c++/v1"
+ignoring nonexistent directory "/include/wasm32-emscripten"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include
+ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL
+ /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include
+End of search list.
+Linking CXX executable cmTC_b7afc
+/home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7afc.dir/link.txt --verbose=1
+/home/keyhan/Desktop6/emsdk/upstream/emscripten/em++      -v CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b7afc 
+shared:INFO: (Emscripten: Running sanity checks)
+shared:WARNING: Assuming object file output in the absence of `-c`, based on output filename. Please add with `-c` or `-r` to avoid this warning
+make[1]: Leaving directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL]
+    add: [/home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include]
+  end of search list found
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL] ==> [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL]
+  collapse include dir [/home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include] ==> [/home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include]
+  implicit include dirs: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include;/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL;/home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_b7afc/fast && /usr/bin/make -f CMakeFiles/cmTC_b7afc.dir/build.make CMakeFiles/cmTC_b7afc.dir/build]
+  ignore line: [make[1]: Entering directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/em++    -v -o CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o -c /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [shared:INFO: (Emscripten: Running sanity checks)]
+  ignore line: [ "/home/keyhan/Desktop6/emsdk/upstream/bin/clang++" -target wasm32-unknown-emscripten -D__EMSCRIPTEN_major__=1 -D__EMSCRIPTEN_minor__=39 -D__EMSCRIPTEN_tiny__=11 -D_LIBCPP_ABI_VERSION=2 -Dunix -D__unix -D__unix__ -Werror=implicit-function-declaration -Xclang -nostdsysteminc -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include -Xclang -isystem/home/keyhan/.emscripten_cache/wasm/include -v -c -DEMSCRIPTEN -fignore-exceptions /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -Xclang -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL -c -o CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr]
+  ignore line: [clang version 11.0.0 (/b/s/w/ir/cache/git/chromium.googlesource.com-external-github.com-llvm-llvm--project baa6f6a7828a46c37b96227282938717220f8b34)]
+  ignore line: [Target: wasm32-unknown-emscripten]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /home/keyhan/Desktop6/emsdk/upstream/bin]
+  ignore line: [ (in-process)]
+  ignore line: [ "/home/keyhan/Desktop6/emsdk/upstream/bin/clang-11" -cc1 -triple wasm32-unknown-emscripten -emit-obj -mrelax-all -disable-free -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mthread-model posix -mframe-pointer=none -fno-rounding-math -masm-verbose -mconstructor-aliases -target-cpu generic -fvisibility hidden -dwarf-column-info -debugger-tuning=gdb -v -resource-dir /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0 -D __EMSCRIPTEN_major__=1 -D __EMSCRIPTEN_minor__=39 -D __EMSCRIPTEN_tiny__=11 -D _LIBCPP_ABI_VERSION=2 -D unix -D __unix -D __unix__ -D EMSCRIPTEN -internal-isystem /include/wasm32-emscripten/c++/v1 -internal-isystem /include/c++/v1 -internal-isystem /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include -internal-isystem /include/wasm32-emscripten -internal-isystem /include -Werror=implicit-function-declaration -fdeprecated-macro -fdebug-compilation-dir /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -fgnuc-version=4.2.1 -fobjc-runtime=gnustep -fcxx-exceptions -fignore-exceptions -fexceptions -fdiagnostics-show-option -nostdsysteminc -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include -isystem/home/keyhan/.emscripten_cache/wasm/include -isystem/home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL -mllvm -combiner-global-alias-analysis=false -mllvm -enable-emscripten-sjlj -mllvm -disable-lsr -o CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o -x c++ /home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 11.0.0 based upon LLVM 11.0.0git default target x86_64-unknown-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/home/keyhan/.emscripten_cache/wasm/include"]
+  ignore line: [ignoring nonexistent directory "/include/wasm32-emscripten/c++/v1"]
+  ignore line: [ignoring nonexistent directory "/include/c++/v1"]
+  ignore line: [ignoring nonexistent directory "/include/wasm32-emscripten"]
+  ignore line: [ignoring nonexistent directory "/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libcxx]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libcxxabi/include]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libunwind/include]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/compat]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/libc]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/lib/libc/musl/arch/emscripten]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/local/include]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/emscripten/system/include/SDL]
+  ignore line: [ /home/keyhan/Desktop6/emsdk/upstream/lib/clang/11.0.0/include]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_b7afc]
+  ignore line: [/home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7afc.dir/link.txt --verbose=1]
+  ignore line: [/home/keyhan/Desktop6/emsdk/upstream/emscripten/em++      -v CMakeFiles/cmTC_b7afc.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b7afc ]
+  ignore line: [shared:INFO: (Emscripten: Running sanity checks)]
+  ignore line: [shared:WARNING: Assuming object file output in the absence of `-c`, based on output filename. Please add with `-c` or `-r` to avoid this warning]
+  ignore line: [make[1]: Leaving directory '/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten/CMakeFiles/CMakeTmp']
+  ignore line: []
+  ignore line: []
+  implicit libs: []
+  implicit dirs: []
+  implicit fwks: []
+
+

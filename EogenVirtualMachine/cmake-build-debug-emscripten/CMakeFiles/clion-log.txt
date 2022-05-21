@@ -1,0 +1,20 @@
+/home/keyhan/Softwares-Data/clion-2019.2.5/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc -DCMAKE_CXX_COMPILER=/home/keyhan/Desktop6/emsdk/upstream/emscripten/em++ -G "CodeBlocks - Unix Makefiles" /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine
+-- The C compiler identification is Clang 11.0.0
+-- The CXX compiler identification is Clang 11.0.0
+-- Check for working C compiler: /home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc
+-- Check for working C compiler: /home/keyhan/Desktop6/emsdk/upstream/emscripten/emcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /home/keyhan/Desktop6/emsdk/upstream/emscripten/em++
+-- Check for working CXX compiler: /home/keyhan/Desktop6/emsdk/upstream/emscripten/em++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Boost: /home/keyhan/globe_libs/boost_1_70_0 (found version "1.70.0")  
+-- Found boost
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug-emscripten

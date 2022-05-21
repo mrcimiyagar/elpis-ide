@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="EogenVirtualMachine"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EogenVirtualMachine">
+				<Option output="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/public/EogenVirtualMachine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/public"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keyhan/globe_libs/boost_1_70_0"/>
+					<Add directory="/home/keyhan/globe_libs/mpir-3.0.0"/>
+					<Add directory="/home/keyhan/projects/c++/EogenVirtualMachine/api"/>
+					<Add directory="/home/keyhan/projects/c++/EogenVirtualMachine/include"/>
+					<Add directory="/usr/include/postgresql"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 EogenVirtualMachine"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EogenVirtualMachine/fast">
+				<Option output="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/public/EogenVirtualMachine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/public"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keyhan/globe_libs/boost_1_70_0"/>
+					<Add directory="/home/keyhan/globe_libs/mpir-3.0.0"/>
+					<Add directory="/home/keyhan/projects/c++/EogenVirtualMachine/api"/>
+					<Add directory="/home/keyhan/projects/c++/EogenVirtualMachine/include"/>
+					<Add directory="/usr/include/postgresql"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 EogenVirtualMachine/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/api/Cipher/Sha256.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/api/Cipher/Sha256.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/api/IO/ConsolePrinter.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/api/IO/ConsolePrinter.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/api/IO/HttpServer.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/api/IO/HttpServer.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/api/String/String.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/api/String/String.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/driver/main.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/models/Models.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/runner/Kasper.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/runner/Kasper.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/structures/array/array.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/structures/array/array.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/structures/dictionary/Dictionary.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/structures/dictionary/Dictionary.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/structures/list/List.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/structures/list/List.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/structures/stack/Stack.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/structures/stack/Stack.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/utils/GarbageCenter.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/utils/GarbageCenter.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/utils/json.c">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/web/utils/json.h">
+			<Option target="EogenVirtualMachine"/>
+		</Unit>
+		<Unit filename="/home/keyhan/Desktop6/react-monaco-editor-master/example/EogenVirtualMachine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

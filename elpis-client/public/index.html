@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    </script>
+    <div id="root"></div>
+    <div id="elpis"></div>
+    <script>
+      var frameTag = document.createElement("iframe");
+      frameTag.onload = function() {
+        window.elpisWindow = frameTag.contentWindow;	
+        window['executeFunction'] = function(funcName, args) {
+          if (args === undefined || args === null) {
+            args = {};
+          }
+          window.elpisWindow.Module.ccall('executeFunction', null, ['string', 'string'], [funcName, JSON.stringify(args)]);
+        }
+      };
+      frameTag.setAttribute("id", "elpis");
+      frameTag.setAttribute("src", "elpis.html");
+      frameTag.setAttribute("style", "width: 1px; height: 1px; border: none;");
+      var gisContainer = document.getElementById("elpis");
+      gisContainer.appendChild(frameTag);
+    </script>
+  </body>
+</html>
