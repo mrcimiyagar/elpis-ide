@@ -8,13 +8,14 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import { colors } from "../../App";
+import { colors, currentItemId, setCurrentItemId } from "../../App";
 import { Tab, Tabs } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { createTheme } from "@mui/material/styles";
 import RunIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
 import StopIcon from "@mui/icons-material/Stop";
+import { pool } from "../../memory";
 
 const tabTheme = createTheme({
   palette: {
@@ -76,9 +77,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function MainAppBar() {
-  const [value, setValue] = React.useState("one");
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setCurrentItemId(newValue);
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -109,32 +109,26 @@ export default function MainAppBar() {
           </Typography>
           <ThemeProvider theme={tabTheme}>
             <Tabs
-              value={value}
+              value={currentItemId}
               onChange={handleChange}
               textColor="secondary"
               indicatorColor="secondary"
               centered
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              <Tab
-                value="one"
-                label="Item One"
-                style={{ color: value === "one" ? "#fff" : "#ddd" }}
-              />
-              <Tab
-                value="two"
-                label="Item Two"
-                style={{ color: value === "two" ? "#fff" : "#ddd" }}
-              />
-              <Tab
-                value="three"
-                label="Item Three"
-                style={{ color: value === "three" ? "#fff" : "#ddd" }}
-              />
+              {Object.keys(pool).map((path) => {
+                return (
+                  <Tab
+                    value={path}
+                    label={path}
+                    style={{ color: currentItemId === path ? "#fff" : "#ddd" }}
+                  />
+                );
+              })}
             </Tabs>
           </ThemeProvider>
 
-          <Search style={{marginRight: 16}}>
+          <Search style={{ marginRight: 16 }}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -150,8 +144,8 @@ export default function MainAppBar() {
               width: 224,
               marginRight: -24,
               background: "linear-gradient(to right, #3a7bd5, #00d2ff)",
-              borderRadius: '0px 0px 16px 0px',
-              paddingTop: 12
+              borderRadius: "0px 0px 16px 0px",
+              paddingTop: 12,
             }}
           >
             <IconButton

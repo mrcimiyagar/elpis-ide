@@ -17,6 +17,8 @@ import SvgIcon from "@mui/material/SvgIcon";
 import TreeView from "@mui/lab/TreeView";
 import TreeItem, { treeItemClasses } from "@mui/lab/TreeItem";
 import { ListItemIcon } from "@mui/material";
+import { updatePool } from "../../memory";
+import { forceUpdateApp } from "../../App";
 
 function MinusSquare(props) {
   return (
@@ -204,39 +206,7 @@ export function handleCurrentFilePathReset() {
   selectedFilePath = "";
 }
 
-export function handleFileOpen(obj, fileSetter, codeSetter) {
-  if (obj.path !== selectedFilePath) {
-    fileSetter(obj.path);
-    selectedFilePath = obj.path;
-    const options = {
-      method: "post",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        path: obj.path,
-      }),
-    };
-    fetch("../get-file", options)
-      .then((rawRes) => {
-        selectedFileType = rawRes.headers.get("file-type");
-        return rawRes.blob();
-      })
-      .then((blb) => {
-        if (selectedFileType === "code") {
-          const reader = new FileReader();
-          reader.addEventListener("loadend", (e) => {
-            const text = e.srcElement.result;
-            codeSetter(text);
-          });
-          reader.readAsText(blb);
-        }
-      });
-  }
-}
-
-function createView(obj, codeSetter, fileSetter, addTab, theme) {
+function createView(obj) {
   return obj.children !== null && obj.children !== undefined ? (
     <StyledTreeItem
       style={{ color: "white" }}
@@ -245,11 +215,11 @@ function createView(obj, codeSetter, fileSetter, addTab, theme) {
       onClick={() => {
         selectedFilePath = obj.path;
       }}
-      onContextMenu={(event) => handleClick(event, obj.path, fileSetter)}
+      onContextMenu={(event) => handleClick(event, obj.path)}
     >
       {obj.children.map((child) => {
         idCounter++;
-        return createView(child, codeSetter, fileSetter, addTab, theme);
+        return createView(child);
       })}
     </StyledTreeItem>
   ) : (
@@ -257,11 +227,11 @@ function createView(obj, codeSetter, fileSetter, addTab, theme) {
       style={{ color: "white" }}
       nodeId={idCounter}
       label={obj.name}
-      onContextMenu={(event) => handleClick(event, obj.path, fileSetter)}
+      onContextMenu={(event) => handleClick(event, obj.path)}
       onClick={(event) => {
         event.preventDefault();
-        addTab(obj.name, obj.path);
-        handleFileOpen(obj, fileSetter, codeSetter);
+        updatePool(obj.path, {path: obj.path});
+        forceUpdateApp();
       }}
     ></StyledTreeItem>
   );
@@ -334,13 +304,7 @@ export default function FileView(props) {
       defaultExpandIcon={<PlusSquare />}
       defaultEndIcon={<CloseSquare />}
     >
-      {createView(
-        props.obj,
-        props.codeSetter,
-        props.fileSetter,
-        props.addTab,
-        props.theme
-      )}
+      {createView(props.fileTree)}
       <Menu
         id="treeViewMenu"
         anchorEl={anchorEl}
@@ -348,25 +312,25 @@ export default function FileView(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={() => onOptionMenuItemSelected(0, props.obj)}>
+        <MenuItem onClick={() => onOptionMenuItemSelected(0, props.fileTree)}>
           <ListItemIcon>
             <SendIcon fontSize="small" />
           </ListItemIcon>
           <Typography variant="inherit">New Folder</Typography>
         </MenuItem>
-        <MenuItem onClick={() => onOptionMenuItemSelected(1, props.obj)}>
+        <MenuItem onClick={() => onOptionMenuItemSelected(1, props.fileTree)}>
           <ListItemIcon>
             <SendIcon fontSize="small" />
           </ListItemIcon>
           <Typography variant="inherit">New File</Typography>
         </MenuItem>
-        <MenuItem onClick={() => onOptionMenuItemSelected(2, props.obj)}>
+        <MenuItem onClick={() => onOptionMenuItemSelected(2, props.fileTree)}>
           <ListItemIcon>
             <SendIcon fontSize="small" />
           </ListItemIcon>
           <Typography variant="inherit">Copy</Typography>
         </MenuItem>
-        <MenuItem onClick={() => onOptionMenuItemSelected(3, props.obj)}>
+        <MenuItem onClick={() => onOptionMenuItemSelected(3, props.fileTree)}>
           <ListItemIcon>
             <SendIcon fontSize="small" />
           </ListItemIcon>
@@ -374,20 +338,20 @@ export default function FileView(props) {
         </MenuItem>
         <MenuItem
           disabled={pasteDisabled}
-          onClick={() => onOptionMenuItemSelected(4, props.obj)}
+          onClick={() => onOptionMenuItemSelected(4, props.fileTree)}
         >
           <ListItemIcon>
             <SendIcon fontSize="small" />
           </ListItemIcon>
           <Typography variant="inherit">Paste</Typography>
         </MenuItem>
-        <MenuItem onClick={() => onOptionMenuItemSelected(5, props.obj)}>
+        <MenuItem onClick={() => onOptionMenuItemSelected(5, props.fileTree)}>
           <ListItemIcon>
             <SendIcon fontSize="small" />
           </ListItemIcon>
           <Typography variant="inherit">Delete</Typography>
         </MenuItem>
-        <MenuItem onClick={() => onOptionMenuItemSelected(6, props.obj)}>
+        <MenuItem onClick={() => onOptionMenuItemSelected(6, props.fileTree)}>
           <ListItemIcon>
             <SendIcon fontSize="small" />
           </ListItemIcon>

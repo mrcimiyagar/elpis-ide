@@ -6,12 +6,25 @@ import MainAppBar from "./components/MainAppBar";
 import ResMonitor from "./components/ResMonitor";
 import CompView from './components/CompView';
 import Websocket from 'react-websocket';
+import PoolConfigurator, { pool, updatePool } from './memory';
 
 export let colors;
 export let updateColors;
 
+export let currentItemId;
+export let setCurrentItemId;
+
+export let forceUpdateApp;
+
+function useForceUpdate() {
+  const [value, setValue] = React.useState(0); // integer state
+  return () => setValue(value => ++value); // update the state to force render
+}
+
 function App() {
+  forceUpdateApp = useForceUpdate();
   const [fileTree, setFileTree] = React.useState({});
+  [currentItemId, setCurrentItemId] = React.useState(undefined);
   [colors, updateColors] = React.useState({
     colorDark1: "#1B262C",
     colorDark2: "#0F4C75",
@@ -26,6 +39,7 @@ function App() {
         backgroundColor: colors.colorDark1,
       }}
     >
+      <PoolConfigurator />
       <Websocket
         url="ws://localhost:3001/"
         onMessage={(data) => {
@@ -67,7 +81,7 @@ function App() {
               borderRadius: 16,
             }}
           >
-            <CompView />
+            <CompView itemId={currentItemId}/>
           </Paper>
           <Paper
             style={{
@@ -80,9 +94,7 @@ function App() {
               borderRadius: 16,
             }}
           >
-            <FileView addTab={() => {}} fileSetter={''} codeSetter={() => {}} treeDisplay={true} 
-                  obj={fileTree}
-/>
+            <FileView fileTree={fileTree}/>
           </Paper>
         </div>
         <div
@@ -110,7 +122,11 @@ function App() {
                 borderRadius: 16,
               }}
             >
-              <CodeEditor />
+              {pool === undefined ? null :
+                Object.keys(pool).map(path => {
+                  return <div style={{width: '100%', height: '100%', display: currentItemId === path ? 'block' : 'none'}}><CodeEditor itemId={path} /></div>;
+                })
+              }
             </Paper>
             <Paper
               style={{
