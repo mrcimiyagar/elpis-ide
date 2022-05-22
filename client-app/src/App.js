@@ -4,9 +4,11 @@ import CodeEditor from "./components/CodeEditor";
 import FileView from "./components/FileView";
 import MainAppBar from "./components/MainAppBar";
 import ResMonitor from "./components/ResMonitor";
-import CompView from './components/CompView';
-import Websocket from 'react-websocket';
-import PoolConfigurator, { pool, updatePool } from './memory';
+import CompView from "./components/CompView";
+import Websocket from "react-websocket";
+import PoolConfigurator, { pool, updatePool } from "./memory";
+import Terminal from "./components/Terminal";
+import MainDrawer from "./components/MainDrawer";
 
 export let colors;
 export let updateColors;
@@ -16,13 +18,21 @@ export let setCurrentItemId;
 
 export let forceUpdateApp;
 
+let terminalLines = [];
+let terminalBottom;
+let terminalIsBusy;
+let terminalPrompt;
+let terminalInputFocused;
+
 function useForceUpdate() {
   const [value, setValue] = React.useState(0); // integer state
-  return () => setValue(value => ++value); // update the state to force render
+  return () => setValue((value) => ++value); // update the state to force render
 }
 
 function App() {
   forceUpdateApp = useForceUpdate();
+  const [cpu, setCpu] = React.useState(1);
+  const [mem, setMem] = React.useState(1);
   const [fileTree, setFileTree] = React.useState({});
   [currentItemId, setCurrentItemId] = React.useState(undefined);
   [colors, updateColors] = React.useState({
@@ -31,6 +41,69 @@ function App() {
     colorDark3: "#3282B8",
     colorAccent: "#BBE1FA",
   });
+  const [loaded, setLoaded] = React.useState(false);
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  useEffect(() => {
+    window.addEventListener(
+      "keydown",
+      function (e) {
+        if (
+          (window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) &&
+          e.keyCode == 67
+        ) {
+          if (terminalInputFocused) {
+            e.preventDefault();
+            const options = {
+              method: "post",
+              headers: {
+                Accept: "application/json, text/plain, */*",
+                "Content-Type": "application/json",
+              },
+            };
+            fetch("../kill-current", options);
+          }
+        } else if (e.keyCode == 13) {
+          let terminalInput = this.document.getElementById("terminalInput");
+          let terminalBottom = this.document.getElementById("terminalBottom");
+          if (!terminalIsBusy && terminalInputFocused) {
+            terminalLines.push({
+              type: "me",
+              content: terminalPrompt + "$ " + terminalInput.value,
+            });
+            if (terminalInput.value.startsWith("cd ")) {
+              const options = {
+                method: "post",
+                headers: {
+                  Accept: "application/json, text/plain, */*",
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  path: terminalInput.value.substring(3),
+                }),
+              };
+              fetch("../cd", options).then((res) => {});
+            } else {
+              const options = {
+                method: "post",
+                headers: {
+                  Accept: "application/json, text/plain, */*",
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  command: terminalInput.value,
+                }),
+              };
+              fetch("../run-command", options).then((res) => {});
+            }
+            terminalBottom.scrollIntoView(false);
+            terminalInput.value = "";
+          }
+        }
+      },
+      false
+    );
+    setLoaded(true);
+  }, []);
   return (
     <div
       style={{
@@ -40,28 +113,38 @@ function App() {
       }}
     >
       <PoolConfigurator />
-      <Websocket
-        url="ws://localhost:3001/"
-        onMessage={(data) => {
-          let packet = JSON.parse(data);
-          if (packet.type === "terminal") {
-            //this.terminalLines.push({
-              //type: "system",
-              //content: packet.content,
-            //});
-            //this.terminalBottom.scrollIntoView(false);
-            //this.setState({ terminalPrompt: packet.path });
-            //if (!this.state.terminalIsBusy) {
-              //this.setState({ terminalIsBusy: true });
-            //}
-          } else if (packet.type === "terminal-close") {
-            //this.setState({ terminalIsBusy: false });
-          } else if (packet.type === "files") {
-            setFileTree(packet.tree);
-          }
-        }}
-      />
-      <MainAppBar />
+      {loaded ? (
+        <Websocket
+          url="ws://localhost:3001/"
+          onMessage={(data) => {
+            let packet = JSON.parse(data);
+            if (packet.type === "terminal") {
+              terminalLines.push({
+                type: "system",
+                content: packet.content,
+              });
+              if (document.getElementById("terminalBottom") !== null) {
+                document.getElementById("terminalBottom").scrollIntoView(false);
+              }
+              terminalPrompt = packet.path;
+              if (!terminalIsBusy) {
+                terminalIsBusy = true;
+              }
+              forceUpdateApp();
+            } else if (packet.type === "terminal-close") {
+              terminalIsBusy = false;
+              forceUpdateApp();
+            } else if (packet.type === "files") {
+              setFileTree(packet.tree);
+            } else if (packet.type === 'resources') {
+              setCpu(packet.cpu.percent);
+              setMem(packet.memory.used * 100 / packet.memory.total);
+            }
+          }}
+        />
+      ) : null}
+      <MainAppBar onDrawerBtnClicked={() => {setDrawerOpen(true);}}/>
+      <MainDrawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
       <div
         style={{
           width: "100%",
@@ -76,12 +159,12 @@ function App() {
               marginLeft: 8,
               width: "100%",
               height: "50%",
-              backgroundColor: colors.colorDark3,
+              backgroundColor: colors.colorDark2,
               padding: 16,
               borderRadius: 16,
             }}
           >
-            <CompView itemId={currentItemId}/>
+            <CompView itemId={currentItemId} />
           </Paper>
           <Paper
             style={{
@@ -89,12 +172,12 @@ function App() {
               marginLeft: 8,
               width: "100%",
               height: "50%",
-              backgroundColor: colors.colorDark3,
+              backgroundColor: colors.colorDark2,
               padding: 16,
               borderRadius: 16,
             }}
           >
-            <FileView fileTree={fileTree}/>
+            <FileView fileTree={fileTree} />
           </Paper>
         </div>
         <div
@@ -117,22 +200,32 @@ function App() {
               style={{
                 width: "calc(100% - 350px)",
                 height: "100%",
-                backgroundColor: colors.colorDark3,
+                backgroundColor: colors.colorDark2,
                 padding: 16,
                 borderRadius: 16,
               }}
             >
-              {pool === undefined ? null :
-                Object.keys(pool).map(path => {
-                  return <div style={{width: '100%', height: '100%', display: currentItemId === path ? 'block' : 'none'}}><CodeEditor itemId={path} /></div>;
-                })
-              }
+              {pool === undefined
+                ? null
+                : Object.keys(pool).map((path) => {
+                    return (
+                      <div
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          display: currentItemId === path ? "block" : "none",
+                        }}
+                      >
+                        <CodeEditor itemId={path} />
+                      </div>
+                    );
+                  })}
             </Paper>
             <Paper
               style={{
                 width: 350,
                 height: "100%",
-                backgroundColor: colors.colorDark3,
+                backgroundColor: colors.colorDark2,
                 padding: 16,
                 borderRadius: 16,
                 marginLeft: 16,
@@ -158,18 +251,28 @@ function App() {
                 padding: 16,
                 borderRadius: 16,
               }}
-            ></Paper>
+            >
+              <Terminal
+                onTerminalFocused={v => {
+                  terminalInputFocused = v;
+                }}
+                terminalPrompt={terminalPrompt}
+                terminalLines={terminalLines}
+                terminalIsBusy={terminalIsBusy}
+                terminalInputFocused={terminalInputFocused}
+              />
+            </Paper>
             <Paper
               style={{
                 marginLeft: 12,
                 width: 450,
                 height: "100%",
-                backgroundColor: colors.colorDark3,
+                backgroundColor: colors.colorDark2,
                 padding: 16,
                 borderRadius: 16,
               }}
             >
-              <ResMonitor />
+              <ResMonitor cpu={cpu} mem={mem} />
             </Paper>
           </div>
         </div>

@@ -76,7 +76,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function MainAppBar() {
+export default function MainAppBar({onDrawerBtnClicked}) {
   const handleChange = (event, newValue) => {
     setCurrentItemId(newValue);
   };
@@ -96,6 +96,7 @@ export default function MainAppBar() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            onClick={onDrawerBtnClicked}
           >
             <MenuIcon />
           </IconButton>

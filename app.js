@@ -8,53 +8,39 @@ const dirTree = require("directory-tree");
 const rimraf = require("rimraf");
 const AsyncLock = require('async-lock');
 const spawn = require("child_process").spawn;
-
+const usage = require('cpu-percentage');
 const os = require('os');
 
-// Take the first CPU, considering every CPUs have the same specs
-// and every NodeJS process only uses one at a time.
-const cpus = os.cpus();
-const cpu = cpus[0];
-
-// Accumulate every CPU times values
-const total = Object.values(cpu.times).reduce(
-    (acc, tv) => acc + tv, 0
-);
-
-// Normalize the one returned by process.cpuUsage() 
-// (microseconds VS miliseconds)
-const usage = process.cpuUsage();
-const currentCPUUsage = (usage.user + usage.system) * 1000;
-
-// Find out the percentage used for this specific CPU
-const perc = currentCPUUsage / total * 100;
-
-console.log(`CPU Usage (%): ${perc}`);
-
-var prc = spawn("free", []);
-
-prc.stdout.setEncoding("utf8");
-prc.stdout.on("data", function (data) {
-    var lines = data.toString().split(/\n/g),
-        line = lines[1].split(/\s+/),
-        total = parseInt(line[1], 10),
-        free = parseInt(line[3], 10),
-        buffers = parseInt(line[5], 10),
-        cached = parseInt(line[6], 10),
-        actualFree = free + buffers + cached,
-        memory = {
-            total: total,
-            used: parseInt(line[2], 10),
-            free: free,
-            shared: parseInt(line[4], 10),
-            buffers: buffers,
-            cached: cached,
-            actualFree: actualFree,
-            percentUsed: parseFloat(((1 - (actualFree / total)) * 100).toFixed(2)),
-            comparePercentUsed: ((1 - (os.freemem() / os.totalmem())) * 100).toFixed(2)
-        };
-    console.log("memory", memory);
-});
+setInterval(() => {
+  if (wsC !== null) {
+    var prc = spawn("free", []);
+    prc.stdout.setEncoding("utf8");
+    prc.stdout.on("data", function (data) {
+        var lines = data.toString().split(/\n/g),
+            line = lines[1].split(/\s+/),
+            total = parseInt(line[1], 10),
+            free = parseInt(line[3], 10),
+            buffers = parseInt(line[5], 10),
+            cached = parseInt(line[6], 10),
+            actualFree = free + buffers + cached,
+            memory = {
+                total: total,
+                used: parseInt(line[2], 10),
+                free: free,
+                shared: parseInt(line[4], 10),
+                buffers: buffers,
+                cached: cached,
+                actualFree: actualFree,
+                percentUsed: parseFloat(((1 - (actualFree / total)) * 100).toFixed(2)),
+                comparePercentUsed: ((1 - (os.freemem() / os.totalmem())) * 100).toFixed(2)
+            };
+            var start = usage();
+            setTimeout(() => {
+              wsC.send(JSON.stringify({type: 'resources', cpu: usage(start), memory: memory}));
+            }, 1000);
+    });
+  }
+}, 2000);
 
 const app = express()
 const port = 3000
@@ -297,7 +283,7 @@ app.post('/run-program', async (req, res) => {
     wsC.send(JSON.stringify({type: 'terminal', content: 'compiling...', path: currentPath.substring((__dirname + '/projects/' + projectName).length)}));
     currentSpawn = spawn('java',  [
        '-classpath',
-       '/home/keyhan/Desktop6/react-monaco-editor-master/example/ECompiler.jar',
+       '/home/mrcimiyagar/MyWorkspace/elpis-ide/ECompiler.jar',
        'Main',
        'main.elpis'
     ]
@@ -439,7 +425,7 @@ app.post('/run-program', async (req, res) => {
     wsC.send(JSON.stringify({type: 'terminal', content: 'executing...', path: currentPath.substring((__dirname + '/projects/' + projectName).length)}));
     res.send('executed.');
     currentSpawn = spawn(
-       '/home/keyhan/Desktop6/react-monaco-editor-master/example/ElpisRuntime'
+       '/home/mrcimiyagar/MyWorkspace/elpis-ide/ElpisRuntime'
     , {shell: true, cwd: currentPath + '/src/output', env:  process.env});
     dataReader = readline.createInterface({
       input: currentSpawn.stdout,
@@ -545,6 +531,8 @@ const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 3001 });
 
 let wsC = null;
+
+
 
 wss.on('connection', function connection(ws) {
   /*ws.on('message', function incoming(message) {
