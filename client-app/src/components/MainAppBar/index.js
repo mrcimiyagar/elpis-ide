@@ -8,14 +8,15 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import { colors, currentItemId, setCurrentItemId } from "../../App";
+import { colors, currentItemId, forceUpdateApp, setCurrentItemId } from "../../App";
 import { Tab, Tabs } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { createTheme } from "@mui/material/styles";
 import RunIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
 import StopIcon from "@mui/icons-material/Stop";
-import { pool } from "../../memory";
+import CloseIcon from '@mui/icons-material/Close';
+import { deletePoolItem, pool } from "../../memory";
 
 const tabTheme = createTheme({
   palette: {
@@ -121,7 +122,7 @@ export default function MainAppBar({onDrawerBtnClicked}) {
                 return (
                   <Tab
                     value={path}
-                    label={path}
+                    label={<><div style={{display: 'flex'}}>{path}<CloseIcon style={{fill: '#fff', marginLeft: 8}} onClick={(e) => {e.preventDefault(); e.stopPropagation(); deletePoolItem(path);}}/></div></>}
                     style={{ color: currentItemId === path ? "#fff" : "#ddd" }}
                   />
                 );
@@ -144,7 +145,7 @@ export default function MainAppBar({onDrawerBtnClicked}) {
               height: 64,
               width: 224,
               marginRight: -24,
-              background: "linear-gradient(to right, #3a7bd5, #00d2ff)",
+              background: "linear-gradient(to right, #1c2f2f, #2a4747)",
               borderRadius: "0px 0px 16px 0px",
               paddingTop: 12,
             }}
@@ -164,7 +165,7 @@ export default function MainAppBar({onDrawerBtnClicked}) {
                 fetch("../run-program", options).then((res) => {});
               }}
             >
-              <RunIcon />
+              <RunIcon style={{fill: '#fff'}}/>
             </IconButton>
             <IconButton
               style={{
@@ -181,7 +182,7 @@ export default function MainAppBar({onDrawerBtnClicked}) {
                 fetch("../kill-current", options).then((res) => {});
               }}
             >
-              <PauseIcon />
+              <PauseIcon style={{fill: '#fff'}}/>
             </IconButton>
             <IconButton
               style={{
@@ -198,7 +199,7 @@ export default function MainAppBar({onDrawerBtnClicked}) {
                 fetch("../kill-current", options).then((res) => {});
               }}
             >
-              <StopIcon />
+              <StopIcon style={{fill: '#fff'}}/>
             </IconButton>
           </div>
         </Toolbar>

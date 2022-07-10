@@ -9,6 +9,12 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControlLabel, Radio, RadioGroup, TextField } from "@mui/material";
+import { colors } from "../../App";
+
+import AddIcon from '@mui/icons-material/Add';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import SettingsIcon from '@mui/icons-material/Settings';
+import Header from '../../images/header.jpg';
 
 let createFileNameValue = "";
 
@@ -71,26 +77,27 @@ let projectCounter = 0;
     let anchor = "left";
     return (
       <Box
-        sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+        sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 350 }}
         role="presentation"
       >
+        <img style={{width: '100%', height: 240}} src={Header} alt={'header'} />
         <List>
           <ListItem key={"New Project"} disablePadding onClick={() => onOptionMenuItemSelected(0)}>
             <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary={"New Project"} />
+              <ListItemIcon><AddIcon style={{fill: '#fff'}}/></ListItemIcon>
+              <ListItemText primary={"New Project"} style={{color: '#fff'}}/>
             </ListItemButton>
           </ListItem>
           <ListItem key={"Projects List"} disablePadding onClick={() => onOptionMenuItemSelected(1)}>
             <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary={"Projects List"} />
+              <ListItemIcon><FormatListBulletedIcon style={{fill: '#fff'}}/></ListItemIcon>
+              <ListItemText primary={"Projects List"} style={{color: '#fff'}}/>
             </ListItemButton>
           </ListItem>
           <ListItem key={"Exit"} disablePadding onClick={() => onOptionMenuItemSelected(2)}>
             <ListItemButton>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary={"Exit"} />
+              <ListItemIcon><SettingsIcon style={{fill: '#fff'}}/></ListItemIcon>
+              <ListItemText primary={"Exit"} style={{color: '#fff'}}/>
             </ListItemButton>
           </ListItem>
         </List>
@@ -105,6 +112,11 @@ let projectCounter = 0;
           anchor={"left"}
           open={props.drawerOpen}
           onClose={() => props.setDrawerOpen(false)}
+          PaperProps={{
+            style: {
+              backgroundColor: colors.colorDark3
+            }
+          }}
         >
           {list("left")}
         </Drawer>

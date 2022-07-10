@@ -9,6 +9,7 @@ import Websocket from "react-websocket";
 import PoolConfigurator, { pool, updatePool } from "./memory";
 import Terminal from "./components/Terminal";
 import MainDrawer from "./components/MainDrawer";
+import ObjectStore from "./components/ObjectStore";
 
 export let colors;
 export let updateColors;
@@ -36,10 +37,10 @@ function App() {
   const [fileTree, setFileTree] = React.useState({});
   [currentItemId, setCurrentItemId] = React.useState(undefined);
   [colors, updateColors] = React.useState({
-    colorDark1: "#1B262C",
-    colorDark2: "#0F4C75",
-    colorDark3: "#3282B8",
-    colorAccent: "#BBE1FA",
+    colorDark1: "#091010",
+    colorDark2: "#0e1818",
+    colorDark3: "#132020",
+    colorAccent: "#2f4f4f",
   });
   const [loaded, setLoaded] = React.useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -231,7 +232,7 @@ function App() {
                 marginLeft: 16,
               }}
             >
-              {/*<FileView />*/}
+              <ObjectStore />
             </Paper>
           </div>
           <div
@@ -247,7 +248,7 @@ function App() {
               style={{
                 width: "calc(100% - 450px)",
                 height: "100%",
-                backgroundColor: colors.colorDark3,
+                backgroundColor: colors.colorDark2,
                 padding: 16,
                 borderRadius: 16,
               }}
